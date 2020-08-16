@@ -55,7 +55,7 @@ const Payment = () => {
         </div>
       </section>
 
-      <Link to="success" children="Finalizar o pedido" />
+      <Link to="/sucesso" children="Finalizar o pedido" />
     </div>
   );
 };

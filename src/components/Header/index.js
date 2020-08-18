@@ -1,15 +1,19 @@
 import React from "react";
-import { useRouteMatch } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import * as S from "./styles";
 
 const Header = () => {
-  const route = useRouteMatch();
+  const { pathname } = useLocation();
 
   return (
-    <header>
-      <strong active={route.path === "carrinho"}>Sacola</strong>
-      <strong active={route.path === "pagamento"}>Pagamento</strong>
-      <strong active={route.path === "sucesso"}>Confirmação</strong>
-    </header>
+    <S.Container>
+      <S.Wrapper>
+        <S.Step active={pathname === "/carrinho"}>Sacola</S.Step>
+        <S.Step active={pathname === "/pagamento"}>Pagamento</S.Step>
+        <S.Step active={pathname === "/sucesso"}>Confirmação</S.Step>
+      </S.Wrapper>
+    </S.Container>
   );
 };
 

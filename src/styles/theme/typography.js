@@ -21,7 +21,7 @@ const typography = {
 
     colors: {
       primary: colorGrade.black[1],
-      secondary: colorGrade.orange[1],
+      secondary: colorGrade.orange[0],
       tertiary: colorGrade.gray[3],
       quartenary: colorGrade.gray[2],
     },

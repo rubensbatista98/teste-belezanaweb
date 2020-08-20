@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import SectionPanel from "../../components/SectionPanel";
 import ItemsList from "../../components/ItemsList";
 import PurchaseSummary from "../../components/PurchaseSummary";
+import Button from "../../ui/Button";
 
 const Cart = () => {
   return (
@@ -14,7 +14,7 @@ const Cart = () => {
 
       <PurchaseSummary />
 
-      <Link to="/pagamento" children="Seguir para o pagamento" />
+      <Button to="/pagamento" children="Seguir para o pagamento" />
     </>
   );
 };

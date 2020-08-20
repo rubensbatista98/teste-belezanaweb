@@ -7,7 +7,7 @@ const buttonPallete = {
     color: colorGrade.orange[0],
     contrastText: colorGrade.white[0],
     hover: {
-      color: colorGrade.orange[2],
+      color: colorGrade.orange[1],
       contrastText: colorGrade.white[0],
     },
   },

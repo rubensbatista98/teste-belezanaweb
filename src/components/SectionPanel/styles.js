@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 export const Title = styled.h2`
   ${({ theme: { main } }) => css`
     font-size: ${main.typography.title.sizes[1]};
-    font-weight: ${main.typography.weight.bold};
+    font-weight: ${main.typography.weight.medium};
     text-transform: uppercase;
     color: ${main.typography.title.colors.primary};
 

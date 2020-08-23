@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.section`
-  margin-bottom: ${({ theme }) => theme.main.sizes.spacing[3]};
+  flex-grow: 1;
 `;
 
 export const Wrapper = styled.div`
@@ -20,9 +21,14 @@ export const Title = styled.h2`
     font-size: ${main.typography.title.sizes[1]};
     font-weight: ${main.typography.weight.medium};
     text-transform: uppercase;
+
     color: ${main.typography.title.colors.primary};
 
     margin-left: ${main.sizes.spacing[1]};
     margin-bottom: ${main.sizes.spacing[1]};
+
+    ${media.greaterThan("medium")`
+      font-size: ${main.typography.title.sizes[2]};
+    `}
   `}
 `;

@@ -4,6 +4,7 @@ const typography = {
   title: {
     sizes: {
       1: "14px",
+      2: "18px",
     },
 
     colors: {

@@ -24,5 +24,13 @@ export default styled(Link)`
     padding: ${main.sizes.spacing[2]};
 
     margin-top: ${main.sizes.spacing[3]};
+
+    trasition: background-color 0.2ms;
+
+    &:hover,
+    &:focus {
+      color: ${main.buttonPallete.primary.hover.contrastText};
+      background-color: ${main.buttonPallete.primary.hover.color};
+    }
   `}
 `;

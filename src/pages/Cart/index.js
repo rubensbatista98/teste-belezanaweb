@@ -3,19 +3,24 @@ import React from "react";
 import SectionPanel from "../../components/SectionPanel";
 import ItemsList from "../../components/ItemsList";
 import PurchaseSummary from "../../components/PurchaseSummary";
+import Container from "../../ui/Container";
 import Button from "../../ui/Button";
+
+import * as S from "./styles";
 
 const Cart = () => {
   return (
-    <>
+    <Container as="main">
       <SectionPanel title="Produtos">
         <ItemsList />
       </SectionPanel>
 
-      <PurchaseSummary />
+      <S.Wrapper>
+        <PurchaseSummary />
 
-      <Button to="/pagamento" children="Seguir para o pagamento" />
-    </>
+        <Button to="/pagamento" children="Seguir para o pagamento" />
+      </S.Wrapper>
+    </Container>
   );
 };
 

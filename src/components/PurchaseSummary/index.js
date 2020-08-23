@@ -15,23 +15,23 @@ const PurchaseSummary = () => {
   return (
     <S.Container>
       <S.Item>
-        <S.Label>Produtos</S.Label>
-        <S.Value>R$ {subTotal}</S.Value>
+        <span>Produtos</span>
+        <span>R$ {subTotal}</span>
       </S.Item>
 
       <S.Item>
-        <S.Label>Frete</S.Label>
-        <S.Value>R$ {shippingTotal}</S.Value>
+        <span>Frete</span>
+        <span>R$ {shippingTotal}</span>
       </S.Item>
 
       <S.Item highlight>
-        <S.Label>Desconto</S.Label>
-        <S.Value>R$ {discount}</S.Value>
+        <span>Desconto</span>
+        <span>R$ {discount}</span>
       </S.Item>
 
       <S.Item>
-        <S.Label as="strong">Total</S.Label>
-        <S.Value as="strong">R$ {total}</S.Value>
+        <strong>Total</strong>
+        <strong>R$ {total}</strong>
       </S.Item>
     </S.Container>
   );

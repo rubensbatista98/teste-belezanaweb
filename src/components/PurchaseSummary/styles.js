@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.section`
   ${({ theme: { main } }) => css`
@@ -26,9 +27,9 @@ export const Item = styled.div`
     :last-of-type {
       margin-top: ${main.sizes.spacing[2]};
     }
+
+    ${media.greaterThan("medium")`
+      font-size: ${main.typography.text.sizes[4]};
+    `}
   `}
 `;
-
-export const Label = styled.span``;
-
-export const Value = styled.span``;

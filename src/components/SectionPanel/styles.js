@@ -3,6 +3,10 @@ import media from "styled-media-query";
 
 export const Container = styled.section`
   flex-grow: 1;
+
+  & + & {
+    margin-top: ${({ theme }) => theme.main.sizes.spacing[3]};
+  }
 `;
 
 export const Wrapper = styled.div`

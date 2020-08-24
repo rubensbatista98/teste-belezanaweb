@@ -25,6 +25,7 @@ const typography = {
       secondary: colorGrade.orange[0],
       tertiary: colorGrade.gray[3],
       quartenary: colorGrade.gray[2],
+      quinternary: colorGrade.black[0],
     },
   },
   weight: {

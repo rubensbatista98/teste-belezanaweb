@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import media from "styled-media-query";
 
 export const Container = styled.header`
-  width: 100vw;
+  max-width: 100vw;
 
   ${({ theme: { main } }) => css`
     background-color: ${main.colors.white};

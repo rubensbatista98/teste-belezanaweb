@@ -19,7 +19,7 @@ const theme = {
       primary: colorGrade.orange[0],
       bgColor: colorGrade.gray[0],
       error: colorGrade.red[1],
-      focus: colorGrade.purple[1],
+      focus: colorGrade.purple[0],
       white: colorGrade.white[0],
       borders: [colorGrade.gray[0], colorGrade.gray[1], colorGrade.gray[3]],
       shadows: ["rgba(0,0,29,0.22)", "rgba(0,0,0,0.25)"],

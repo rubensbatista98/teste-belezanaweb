@@ -1,37 +1,67 @@
-import React from "react";
+import React, { useMemo, useCallback, forwardRef } from "react";
+import { Formik, Form } from "formik";
 
-import * as S from "./styles";
+import FormikControl from "./FormikControl";
+import validationSchema from "./schema";
 
-const PaymentForm = () => {
+import { InputGroup } from "./styles";
+
+const PaymentForm = (_, ref) => {
+  const initialValues = useMemo(
+    () => ({
+      cardNumber: "",
+      cardName: "",
+      expirationDate: "",
+      cvv: "",
+    }),
+    []
+  );
+
+  const onSubmit = useCallback((values) => {
+    console.log(values);
+  }, []);
+
   return (
-    <form>
-      <S.InputBlock>
-        <S.Label htmlFor="credit_card">Número do cartão:</S.Label>
-        <S.Input
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      validateOnChange={false}
+      onSubmit={onSubmit}
+      innerRef={ref}
+    >
+      <Form>
+        <FormikControl
           type="text"
-          id="credit_card"
+          label="Número do cartão:"
+          name="cardNumber"
           placeholder="____.____.____.____"
         />
-      </S.InputBlock>
 
-      <S.InputBlock>
-        <S.Label htmlFor="name">Nome do Titular:</S.Label>
-        <S.Input type="text" id="name" placeholder="Como no cartão" />
-      </S.InputBlock>
+        <FormikControl
+          type="text"
+          label="Nome do Titular:"
+          name="cardName"
+          placeholder="Como no cartão"
+        />
 
-      <S.InputGroup>
-        <S.InputBlock>
-          <S.Label htmlFor="validate">Validade (mês/ano):</S.Label>
-          <S.Input type="text" id="validate" placeholder="__/____" />
-        </S.InputBlock>
+        <InputGroup>
+          <FormikControl
+            type="text"
+            label="Validade (mês/ano):"
+            name="expirationDate"
+            placeholder="__/____"
+          />
 
-        <S.InputBlock>
-          <S.Label htmlFor="cvv">CVV:</S.Label>
-          <S.Input type="text" id="cvv" placeholder="___" />
-        </S.InputBlock>
-      </S.InputGroup>
-    </form>
+          <FormikControl
+            type="text"
+            label="CVV:"
+            name="cvv"
+            placeholder="___"
+          />
+        </InputGroup>
+      </Form>
+    </Formik>
   );
 };
 
-export default PaymentForm;
+export default forwardRef(PaymentForm);

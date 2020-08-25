@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export default styled(Link)`
   ${({ theme: { main } }) => css`
     display: block;
+    width: 100%;
 
     font-size: ${main.typography.text.sizes[5]};
     font-weight: ${main.typography.weight.bold || "bold"};
@@ -16,6 +17,7 @@ export default styled(Link)`
     color: ${main.buttonPallete.primary.contrastText};
     background-color: ${main.buttonPallete.primary.color};
 
+    border: none;
     border-radius: ${main.sizes.borderRadius};
 
     box-shadow: 0 2px 4px ${main.colors.shadows[1]},
@@ -25,6 +27,7 @@ export default styled(Link)`
 
     margin-top: ${main.sizes.spacing[3]};
 
+    cursor: pointer;
     trasition: background-color 0.2ms;
 
     &:hover,

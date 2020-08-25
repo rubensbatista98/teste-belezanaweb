@@ -18,7 +18,7 @@ const theme = {
     colors: {
       primary: colorGrade.orange[0],
       bgColor: colorGrade.gray[0],
-      error: colorGrade.red[1],
+      error: colorGrade.red[0],
       focus: colorGrade.purple[0],
       white: colorGrade.white[0],
       borders: [colorGrade.gray[0], colorGrade.gray[1], colorGrade.gray[3]],

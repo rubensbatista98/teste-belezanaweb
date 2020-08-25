@@ -39,7 +39,7 @@ export const Wrapper = styled.div`
 
   margin-left: ${({ theme }) => theme.main.sizes.spacing[1]};
 
-  ${media.greaterThan()`
+  ${media.greaterThan("medium")`
     margin-left: ${({ theme }) => theme.main.sizes.spacing[2]};
   `}
 `;

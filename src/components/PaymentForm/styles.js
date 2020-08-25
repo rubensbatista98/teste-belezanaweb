@@ -37,13 +37,13 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  ${({ theme: { main } }) => css`
+  ${({ theme: { main }, error }) => css`
     display: block;
     width: 100%;
 
     font-size: ${main.typography.text.sizes[4]};
 
-    border: 1px solid ${main.colors.borders[1]};
+    border: 1px solid ${error ? main.colors.error : main.colors.borders[1]};
     border-radius: ${main.sizes.borderRadius};
 
     box-shadow: inset 0 1px 2px ${main.colors.shadows[1]};
@@ -61,4 +61,9 @@ export const Input = styled.input`
       border-color: ${main.colors.focus};
     }
   `}
+`;
+
+export const TextError = styled.span`
+  font-size: ${({ theme }) => theme.main.typography.text.sizes[1]};
+  color: ${({ theme }) => theme.main.colors.error};
 `;

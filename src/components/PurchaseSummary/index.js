@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 
 import * as S from "./styles";
 
+import formatPrice from "../../utils/formatPrice";
+
 const PurchaseSummary = () => {
   const cart = useSelector((state) => state.cart);
 
@@ -11,23 +13,23 @@ const PurchaseSummary = () => {
   return (
     <S.Container>
       <S.Item>
-        <span>Produtos</span>
-        <span>R$ {subTotal}</span>
+        <span>Prutos</span>
+        <span>{formatPrice(subTotal)}</span>
       </S.Item>
 
       <S.Item>
         <span>Frete</span>
-        <span>R$ {shippingTotal}</span>
+        <span>{formatPrice(shippingTotal)}</span>
       </S.Item>
 
       <S.Item highlight>
         <span>Desconto</span>
-        <span>R$ {discount}</span>
+        <span>{formatPrice(discount)}</span>
       </S.Item>
 
       <S.Item>
         <strong>Total</strong>
-        <strong>R$ {total}</strong>
+        <strong>{formatPrice(total)}</strong>
       </S.Item>
     </S.Container>
   );

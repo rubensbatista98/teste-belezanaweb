@@ -2,6 +2,8 @@ import React from "react";
 
 import * as S from "./styles";
 
+import formatPrice from "../../../utils/formatPrice";
+
 const ProductItem = ({ quantity, product }) => (
   <S.Container>
     <S.Image>
@@ -11,7 +13,9 @@ const ProductItem = ({ quantity, product }) => (
     <S.Wrapper>
       <S.Title>{product.name}</S.Title>
 
-      <S.Price>R$ {product.priceSpecification.price * quantity}</S.Price>
+      <S.Price>
+        {formatPrice(product.priceSpecification.price * quantity)}
+      </S.Price>
     </S.Wrapper>
   </S.Container>
 );

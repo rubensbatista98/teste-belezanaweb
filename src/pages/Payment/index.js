@@ -18,15 +18,11 @@ const Payment = () => {
   const handleClick = useCallback(async () => {
     const formik = formRef.current;
 
-    if (formik) {
-      await formik.submitForm();
-
-      if (formik.isValid) history.replace("sucesso");
-    }
-  }, [history]);
+    if (formik) await formik.submitForm();
+  }, []);
 
   if (!items.length) {
-    history.replace("carrinho");
+    history.replace("/carrinho");
   }
 
   return (

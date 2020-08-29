@@ -11,8 +11,10 @@ import * as S from "./styles";
 
 const Success = () => {
   const { items } = useSelector((state) => state.cart);
+  const payment = useSelector((state) => state.payment);
 
-  if (!items.length) return <Redirect to="carrinho" />;
+  if (!items.length) return <Redirect to="/carrinho" />;
+  if (!payment) return <Redirect to="/pagamento" />;
 
   return (
     <S.Container>
@@ -25,9 +27,9 @@ const Success = () => {
         <div style={{ flexGrow: 1 }}>
           <SectionPanel title="Pagamento">
             <S.PaymentData>
-              <p>****.****.****.1234</p>
-              <p>José da Silva</p>
-              <p>05/2019</p>
+              <p>{payment?.cardNumber}</p>
+              <p>{payment?.cardName}</p>
+              <p>{payment?.expirationDate}</p>
             </S.PaymentData>
           </SectionPanel>
 

@@ -1,12 +1,19 @@
 import React, { useMemo, useCallback, forwardRef } from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Formik, Form } from "formik";
 
 import FormikControl from "./FormikControl";
 import validationSchema from "./schema";
 
+import paymentActions from "../../store/reducers/payment/actions";
+
 import { InputGroup } from "./styles";
 
 const PaymentForm = (_, ref) => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   const initialValues = useMemo(
     () => ({
       cardNumber: "",
@@ -17,15 +24,20 @@ const PaymentForm = (_, ref) => {
     []
   );
 
-  const onSubmit = useCallback((values) => {
-    console.log(values);
-  }, []);
+  const onSubmit = useCallback(
+    (values) => {
+      dispatch(paymentActions.addPayment(values));
+      history.push("/sucesso");
+    },
+    [dispatch, history]
+  );
 
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
       validateOnChange={false}
+      validateOnMount={true}
       onSubmit={onSubmit}
       innerRef={ref}
     >

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -12,6 +12,11 @@ import * as S from "./styles";
 const Success = () => {
   const { items } = useSelector((state) => state.cart);
   const payment = useSelector((state) => state.payment);
+
+  const hideCardNumber = useCallback(
+    (number) => number.replace(/(\d{4})\s/g, "**** "),
+    []
+  );
 
   if (!items.length) return <Redirect to="/carrinho" />;
   if (!payment) return <Redirect to="/pagamento" />;
@@ -27,7 +32,7 @@ const Success = () => {
         <div style={{ flexGrow: 1 }}>
           <SectionPanel title="Pagamento">
             <S.PaymentData>
-              <p>{payment?.cardNumber}</p>
+              <p>{hideCardNumber(payment?.cardNumber)}</p>
               <p>{payment?.cardName}</p>
               <p>{payment?.expirationDate}</p>
             </S.PaymentData>

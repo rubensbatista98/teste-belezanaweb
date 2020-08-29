@@ -1,16 +1,12 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import * as S from "./styles";
 
-const resumeData = {
-  subTotal: 624.8,
-  shippingTotal: 5.3,
-  discount: 30,
-  total: 618.9,
-};
-
 const PurchaseSummary = () => {
-  const { subTotal, shippingTotal, discount, total } = resumeData;
+  const cart = useSelector((state) => state.cart);
+
+  const { subTotal, shippingTotal, discount, total } = cart;
 
   return (
     <S.Container>

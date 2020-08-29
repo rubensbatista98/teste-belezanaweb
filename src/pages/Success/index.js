@@ -1,4 +1,6 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import SectionPanel from "../../components/SectionPanel";
 import ItemsList from "../../components/ItemsList";
@@ -8,6 +10,10 @@ import Container from "../../ui/Container";
 import * as S from "./styles";
 
 const Success = () => {
+  const { items } = useSelector((state) => state.cart);
+
+  if (!items.length) return <Redirect to="carrinho" />;
+
   return (
     <S.Container>
       <S.SuccessMessage>
@@ -26,7 +32,7 @@ const Success = () => {
           </SectionPanel>
 
           <SectionPanel title="Produtos">
-            <ItemsList />
+            <ItemsList items={items} />
           </SectionPanel>
         </div>
 

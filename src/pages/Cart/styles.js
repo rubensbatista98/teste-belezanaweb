@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import media from "styled-media-query";
 
 export const Wrapper = styled.div`
@@ -9,5 +9,16 @@ export const Wrapper = styled.div`
     min-width: 350px;
 
     margin-left: ${({ theme }) => theme.main.sizes.spacing[3]};
+  `}
+`;
+
+export const Message = styled.h1`
+  ${({ theme }) => css`
+    font-size: ${theme.main.typography.text.sizes[4]};
+    text-align: center;
+
+    ${media.greaterThan("medium")`
+      font-size: ${theme.main.typography.text.sizes[5]};
+    `}
   `}
 `;

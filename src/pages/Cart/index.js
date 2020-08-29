@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import SectionPanel from "../../components/SectionPanel";
 import ItemsList from "../../components/ItemsList";
@@ -9,10 +10,14 @@ import Button from "../../ui/Button";
 import * as S from "./styles";
 
 const Cart = () => {
+  const items = useSelector((state) => state.cart.items);
+
+  if (!items.length) return <S.Message>Carrinho vazio!</S.Message>;
+
   return (
     <Container as="main">
       <SectionPanel title="Produtos">
-        <ItemsList />
+        <ItemsList items={items} />
       </SectionPanel>
 
       <S.Wrapper>

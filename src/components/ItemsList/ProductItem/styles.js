@@ -36,17 +36,19 @@ export const Image = styled.div`
 
 export const Wrapper = styled.div`
   flex-grow: 1;
+  height: 100%;
 
   margin-left: ${({ theme }) => theme.main.sizes.spacing[1]};
 
   ${media.greaterThan("medium")`
     margin-left: ${({ theme }) => theme.main.sizes.spacing[2]};
+    padding: ${({ theme }) => theme.main.sizes.spacing[1]};
   `}
 `;
 
 export const Title = styled.h3`
   ${({ theme: { main } }) => css`
-    max-width: 60ch;
+    max-width: 50ch;
 
     font-size: ${main.typography.text.sizes[1]};
     font-weight: ${main.typography.weight.regular};

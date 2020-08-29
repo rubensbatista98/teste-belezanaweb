@@ -1,5 +1,6 @@
 import React, { useRef, useCallback } from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import SectionPanel from "../../components/SectionPanel";
 import PurchaseSummary from "../../components/PurchaseSummary";
@@ -10,6 +11,7 @@ import Button from "../../ui/Button";
 import * as S from "./styles";
 
 const Payment = () => {
+  const { items } = useSelector((state) => state.cart);
   const formRef = useRef(null);
   const history = useHistory();
 
@@ -23,8 +25,12 @@ const Payment = () => {
     }
   }, [history]);
 
+  if (!items.length) {
+    history.replace("carrinho");
+  }
+
   return (
-    <Container>
+    <Container as="main">
       <SectionPanel title="Cartão de Credito">
         <PaymentForm ref={formRef} />
       </SectionPanel>

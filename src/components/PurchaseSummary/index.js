@@ -13,7 +13,7 @@ const PurchaseSummary = () => {
   return (
     <S.Container>
       <S.Item>
-        <span>Prutos</span>
+        <span>Produtos</span>
         <span>{formatPrice(subTotal)}</span>
       </S.Item>
 

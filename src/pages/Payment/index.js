@@ -27,7 +27,7 @@ const Payment = () => {
 
   return (
     <Container as="main">
-      <SectionPanel title="Cartão de Credito">
+      <SectionPanel title="Cartão de Crédito">
         <PaymentForm ref={formRef} />
       </SectionPanel>
 
